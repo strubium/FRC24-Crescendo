@@ -46,8 +46,8 @@ public class DriveSubsystem extends SubsystemBase {
   // The gyro sensor
     private final ADIS16470_IMU m_gyro2 = new ADIS16470_IMU();
     private final AHRS m_gyro = new AHRS(); // using navx2
-    
-    
+
+
   // Slew rate filter variables for controlling lateral acceleration
   private double m_currentRotation = 0.0;
   private double m_currentTranslationDir = 0.0;
@@ -114,14 +114,12 @@ public class DriveSubsystem extends SubsystemBase {
 
   public double toDouble(float i)
   {
-    double o = i;
-    return o;
+    return i;
   }
   
   public double toDouble(int i)
   {
-    double o = i;
-    return o;
+    return i;
   }
 
   /**
