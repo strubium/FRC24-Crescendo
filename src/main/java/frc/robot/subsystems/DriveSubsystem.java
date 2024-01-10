@@ -114,12 +114,14 @@ public class DriveSubsystem extends SubsystemBase {
 
   public double toDouble(float i)
   {
-    return i;
+    double o = i;
+    return o;
   }
   
   public double toDouble(int i)
   {
-    return i;
+    double o = i;
+    return o;
   }
 
   /**
