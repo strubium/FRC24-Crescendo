@@ -16,6 +16,7 @@ import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.util.WPIUtilJNI;
 import edu.wpi.first.wpilibj.ADIS16470_IMU;
+import net.jafama.FastMath;
 import frc.robot.Constants.DriveConstants;
 import frc.utils.SwerveUtils;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -159,8 +160,8 @@ public class DriveSubsystem extends SubsystemBase {
 
     if (rateLimit) {
       // Convert XY to polar for rate limiting
-      double inputTranslationDir = Math.atan2(ySpeed, xSpeed);
-      double inputTranslationMag = Math.sqrt(Math.pow(xSpeed, 2) + Math.pow(ySpeed, 2));
+      double inputTranslationDir = FastMath.atan2(ySpeed, xSpeed);
+      double inputTranslationMag = Math.sqrt(FastMath.pow(xSpeed, 2) + FastMath.pow(ySpeed, 2));
 
       // Calculate the direction slew rate based on an estimate of the lateral acceleration
       double directionSlewRate;
@@ -194,8 +195,8 @@ public class DriveSubsystem extends SubsystemBase {
       }
       m_prevTime = currentTime;
       
-      xSpeedCommanded = m_currentTranslationMag * Math.cos(m_currentTranslationDir);
-      ySpeedCommanded = m_currentTranslationMag * Math.sin(m_currentTranslationDir);
+      xSpeedCommanded = m_currentTranslationMag * FastMath.cos(m_currentTranslationDir);
+      ySpeedCommanded = m_currentTranslationMag * FastMath.sin(m_currentTranslationDir);
       m_currentRotation = m_rotLimiter.calculate(rot);
 
 
