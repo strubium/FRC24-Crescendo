@@ -44,8 +44,8 @@ public class DriveSubsystem extends SubsystemBase {
       DriveConstants.kRearRightTurningCanId,
       DriveConstants.kBackRightChassisAngularOffset);
 
-  // The gyro sensor
-    private final ADIS16470_IMU m_gyro2 = new ADIS16470_IMU();
+//  The gyro sensors
+//  private final ADIS16470_IMU m_gyro2 = new ADIS16470_IMU();
     private final AHRS m_gyro = new AHRS(); // using navx2
     
     
